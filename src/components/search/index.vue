@@ -65,12 +65,16 @@
 </template>
 
 <i18n>
-cancel_text:
-  en: cancel
-  zh-CN: 取消
-placeholder:
-  en: Search
-  zh-CN: 搜索
+  {
+  "cancel_text": {
+  "en": "cancel",
+  "zh-CN": "取消"
+  },
+  "placeholder": {
+  "en": "Search",
+  "zh-CN": "搜索"
+  }
+  }
 </i18n>
 
 <script>
