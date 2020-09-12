@@ -15,7 +15,7 @@ export default {
   props: {
     gutter: {
       type: Number,
-      default: 8
+      default: 0
     },
     orient: {
       type: String,

@@ -3,7 +3,7 @@
     class="vux-tab-item"
     :class="[currentSelected ? activeClass : '', {
       'vux-tab-selected': currentSelected,
-      'vux-tab-disabled': disabled 
+      'vux-tab-disabled': disabled
     }]"
     :style="style"
     @click="onItemClick">
@@ -50,3 +50,9 @@ export default {
   }
 }
 </script>
+
+<style lang="less">
+  .vux-tab-item{
+    height: 88px;
+  }
+</style>

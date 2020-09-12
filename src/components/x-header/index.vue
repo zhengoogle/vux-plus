@@ -92,15 +92,15 @@ export default {
   background-color: @header-background-color;
 }
 .vux-header .vux-header-title {
-  line-height: 40px;
+  line-height: 80px;
   text-align: center;
-  font-size: 18px;
+  font-size: 32px;
   font-weight: 400;
   color: @header-title-color;
 }
 .vux-header-title-area, .vux-header .vux-header-title {
   margin: 0 88px;
-  height: 40px;
+  height: 80px;
   width: auto;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -111,10 +111,10 @@ export default {
 }
 .vux-header .vux-header-left,.vux-header .vux-header-right {
   position: absolute;
-  top: 14px;
+  /*top: 14px;*/
   display: block;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 32px;
+  line-height: 80px;
   color: @header-text-color;
 }
 .vux-header .vux-header-left a,.vux-header .vux-header-left button,.vux-header .vux-header-right a,.vux-header .vux-header-right button {
@@ -135,18 +135,19 @@ export default {
   position: absolute;
   width: 30px;
   height: 30px;
-  top: -5px;
+  top: 13px;
   left: -5px;
+  line-height: 80px;
 
   &:before {
     content: "";
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     border: 1px solid @header-arrow-color;
     border-width: 1px 0 0 1px;
     transform: rotate(315deg);
-    top: 8px;
+    top: 16px;
     left: 7px;
   }
 }

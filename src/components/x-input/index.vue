@@ -122,7 +122,7 @@
       ref="input"/>
     </div>
     <div class="weui-cell__ft">
-      <icon type="clear" v-show="!hasRightFullHeightSlot && !equalWith && showClear && currentValue !== '' && !readonly && !disabled && isFocus" @click.native="clear"></icon>
+      <icon name="clear-ic" type="clear" v-show="!hasRightFullHeightSlot && !equalWith && showClear && currentValue !== '' && !readonly && !disabled && isFocus" @click.native="clear"></icon>
 
       <icon @click.native="onClickErrorIcon" class="vux-input-icon" type="warn" :title="!valid ? firstError : ''" v-show="showWarn"></icon>
       <icon @click.native="onClickErrorIcon" class="vux-input-icon" type="warn" v-if="!novalidate && hasLengthEqual && dirty && equalWith && !valid"></icon>
@@ -317,6 +317,12 @@ export default {
     window.addEventListener('resize', this.scrollIntoView)
   },
   methods: {
+    updateSelectionStart(inc){
+      setTimeout(()=>{
+        this.$refs.input.selectionStart = this.$refs.input.selectionStart + inc
+        this.$refs.input.focus()
+      },50)
+    },
     scrollIntoView (time = 0) {
       // alert('scroll into view')
       if (/iphone/i.test(navigator.userAgent)) {
@@ -347,6 +353,7 @@ export default {
       this.valid = true
     },
     clear () {
+      debugger
       this.currentValue = ''
       this.focus()
       this.$emit('on-click-clear-icon')

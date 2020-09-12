@@ -6,10 +6,10 @@ export default {
         onClickOutside(e)
       }
     }
-    document.addEventListener('click', el.handler, true)
+    document.addEventListener('click', el.handler, false)
   },
   unbind: function (el) {
-    document.removeEventListener('click', el.handler, true)
+    document.removeEventListener('click', el.handler, false)
     el.handler = null
   }
 }

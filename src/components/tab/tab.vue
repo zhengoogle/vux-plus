@@ -187,7 +187,7 @@ export default {
 .vux-tab {
   display: flex;
   background-color: #fff;
-  height: 44px;
+  height: 88px;
   position: relative;
 }
 
@@ -207,9 +207,9 @@ export default {
   box-sizing: border-box;
   background: linear-gradient(180deg, #e5e5e5, #e5e5e5, rgba(229, 229, 229, 0)) bottom left no-repeat;
   background-size: 100% 1px;
-  font-size: 14px;
+  font-size: 28px;
   text-align: center;
-  line-height: 44px;
+  line-height: 88px;
   color: @tab-text-default-color;
 }
 
@@ -265,11 +265,11 @@ export default {
 
 .vux-tab-wrap {
   position: relative;
-  padding-top: 44px;
+  padding-top: 88px;
 }
 
 .vux-tab-container {
-  height: 44px;
+  height: 88px;
   top: 0;
   left: 0;
   right: 0;

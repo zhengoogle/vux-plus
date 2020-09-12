@@ -1,6 +1,6 @@
 <template>
   <a
-    class="vux-datetime weui-cell"
+    class="vux-datetime"
     :class="{'weui-cell_access': !readonly}"
     :data-cancel-text="$t('cancel_text')"
     :data-confirm-text="$t('confirm_text')"
@@ -36,14 +36,14 @@
   </a>
 </template>
 
-<i18n>
-cancel_text:
-  en: cancel
-  zh-CN: 取消
-confirm_text:
-  en: done
-  zh-CN: 确定
-</i18n>
+<!--<i18n>-->
+<!--cancel_text:-->
+  <!--en: cancel-->
+  <!--zh-CN: 取消-->
+<!--confirm_text:-->
+  <!--en: done-->
+  <!--zh-CN: 确定-->
+<!--</i18n>-->
 
 <script>
 import Icon from '../icon'

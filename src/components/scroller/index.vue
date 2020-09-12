@@ -35,6 +35,28 @@ const pullupDefaultConfig = () => ({
   clsPrefix: 'xs-plugin-pullup-'
 })
 
+// fix: ios13 scroll issue
+// https://github.com/airyland/vux/issues/3618
+// https://blog.csdn.net/sllailcp/java/article/details/102502452
+var vendor = (function vendor() {
+  var el = document.createElement('div').style;
+  var vendors = ['t', 'webkitT', 'MozT', 'msT', 'OT'],
+    transform,
+    i = 0,
+    l = vendors.length;
+  for (; i < l; i++) {
+    transform = vendors[i] + 'ransform';
+    if (transform in el) return vendors[i].substr(0, vendors[i].length - 1);
+  }
+  return false;
+})()
+function prefixStyle(attrName) {
+  if (vendor === false) return false;
+  if (vendor === '') return attrName;
+  return vendor + attrName.charAt(0).toUpperCase() + attrName.substr(1);
+}
+var transform = prefixStyle("transform");
+
 export default {
   name: 'scroller',
   props: {
@@ -234,6 +256,11 @@ export default {
         stopPropagation: this.stopPropagation
       })
 
+      this._xscroll.getScrollTop = ()=> {
+        var transY = window.getComputedStyle(this._xscroll.container)[transform].match(/[-\d\.*\d*e\-\d]+/g);
+        return transY ? Math.round(transY[5]) === 0 ? 0 : -Math.round(transY[5]) : 0;
+      }
+
       this._xscroll.on('scroll', () => {
         if (this._xscroll) {
           const top = this._xscroll.getScrollTop()
@@ -331,7 +358,12 @@ function pure (obj) {
 </script>
 
 <style>
-.xs-plugin-pullup-container {
-  text-align: center;
-}
+  .xs-plugin-pullup-container {
+    text-align: center;
+    color: #666666;
+    line-height: 60px;
+  }
+  .xs-plugin-pulldown-container {
+    color: #666666;
+  }
 </style>

@@ -163,8 +163,14 @@ import XProgress from './src/components/x-progress/index.vue'
 import XSwitch from './src/components/x-switch/index.vue'
 import XTable from './src/components/x-table/index.vue'
 import XTextarea from './src/components/x-textarea/index.vue'
+// import Test from './src/components/test/index.vue'
+// ui-zz
+// import ZZBorderBox from './ui/zz/border-box/ZZBorderBox.vue'
 
+// const exportVux = {
 export {
+  // Test,
+  // ZZBorderBox,
   Actionsheet,
   Agree,
   AjaxPlugin,
@@ -327,3 +333,6 @@ export {
   XTable,
   XTextarea
 }
+// Object.assign(exportVux, require('./ui/index'))
+
+// export default exportVux
