@@ -28,8 +28,8 @@
 
     </div>
     <div :class="[dotsClass, 'vux-indicator', `vux-indicator-${dotsPosition}`]" v-show="showDots">
-      <a href="javascript:" v-for="key in length">
-        <i class="vux-icon-dot" :class="{'active': key - 1 === current}"></i>
+      <a v-for="key in length">
+        <i class="vux-icon-dot" :class="{'active': key - 1 === current}" @click="onChangeDot(key)"></i>
       </a>
     </div>
   </div>
@@ -58,6 +58,11 @@ export default {
     })
   },
   methods: {
+    onChangeDot (key) {
+      let goIndex = key - 1
+      this.$emit('on-index-change', goIndex)
+      this.index = goIndex
+    },
     hasTwoLoopItem () {
       if (this.list.length === 2 && this.loop) {
         this.listTwoLoopItem = this.list
@@ -247,6 +252,7 @@ export default {
         height: 6px;
         border-radius: 3px;
         background-color: #d0cdd1;
+        cursor: pointer;
       }
       > .@{pre}-icon-dot.active {
         background-color: @swiper-indicator-active-color;
