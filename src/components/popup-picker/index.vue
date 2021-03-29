@@ -49,15 +49,6 @@
   </div>
 </template>
 
-<i18n>
-cancel_text:
-  en: cancel
-  zh-CN: 取消
-confirm_text:
-  en: ok
-  zh-CN: 完成
-</i18n>
-
 <script>
 import Picker from '../picker'
 import Cell from '../cell'
