@@ -30,12 +30,12 @@ export default {
     },
     maskTransition: {
       type: String,
-      default: 'vux-mask'
+      default: 'vux-mask1'
     },
     maskZIndex: [String, Number],
     dialogTransition: {
       type: String,
-      default: 'vux-dialog'
+      default: 'vux-dialog1'
     },
     dialogClass: {
       type: String,
